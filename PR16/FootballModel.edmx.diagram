@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4fa242fc3daf49fbbfdab93d83d5d11f" Name="Diagram1">
+        <EntityTypeShape EntityType="FootballModel.Cities" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.Commands" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.Lands" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.Matches" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootballModel.Varehouses" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="FootballModel.FK__Commands__City_I__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.FK__Commands__Match___300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.FK__Commands__Vareho__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="FootballModel.FK__Varehouse__Land___29572725" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

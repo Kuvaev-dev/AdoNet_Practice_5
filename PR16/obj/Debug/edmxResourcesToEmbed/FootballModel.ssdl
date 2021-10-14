@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище FootballModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Commands">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Command Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="City ID" Type="int" Nullable="false" />
+    <Property Name="Match ID" Type="int" />
+    <Property Name="Varehouse ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Lands">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Land" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Matches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First Team" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Second Team" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="First Team Score" Type="int" Nullable="false" />
+    <Property Name="Second Team Score" Type="int" Nullable="false" />
+    <Property Name="Score Info" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Match Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Varehouses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Land ID" Type="int" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Position" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Commands__City I__31EC6D26">
+    <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
+    <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Commands">
+        <PropertyRef Name="City ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commands__Match __300424B4">
+    <End Role="Matches" Type="Self.Matches" Multiplicity="0..1" />
+    <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Matches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Commands">
+        <PropertyRef Name="Match ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Commands__Vareho__30F848ED">
+    <End Role="Varehouses" Type="Self.Varehouses" Multiplicity="0..1" />
+    <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Varehouses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Commands">
+        <PropertyRef Name="Varehouse ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Varehouse__Land __29572725">
+    <End Role="Lands" Type="Self.Lands" Multiplicity="1" />
+    <End Role="Varehouses" Type="Self.Varehouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lands">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Varehouses">
+        <PropertyRef Name="Land ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище FootballModelContainer">
+    <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Commands" EntityType="Self.Commands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lands" EntityType="Self.Lands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Matches" EntityType="Self.Matches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Varehouses" EntityType="Self.Varehouses" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Commands__City I__31EC6D26" Association="Self.FK__Commands__City I__31EC6D26">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Commands" EntitySet="Commands" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commands__Match __300424B4" Association="Self.FK__Commands__Match __300424B4">
+      <End Role="Matches" EntitySet="Matches" />
+      <End Role="Commands" EntitySet="Commands" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Commands__Vareho__30F848ED" Association="Self.FK__Commands__Vareho__30F848ED">
+      <End Role="Varehouses" EntitySet="Varehouses" />
+      <End Role="Commands" EntitySet="Commands" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Varehouse__Land __29572725" Association="Self.FK__Varehouse__Land __29572725">
+      <End Role="Lands" EntitySet="Lands" />
+      <End Role="Varehouses" EntitySet="Varehouses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

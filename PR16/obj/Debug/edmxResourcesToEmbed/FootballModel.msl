@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище FootballModelContainer" CdmEntityContainer="Football_dbEntities2">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="FootballModel.Cities">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commands">
+      <EntityTypeMapping TypeName="FootballModel.Commands">
+        <MappingFragment StoreEntitySet="Commands">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Command_Name" ColumnName="Command Name" />
+          <ScalarProperty Name="City_ID" ColumnName="City ID" />
+          <ScalarProperty Name="Match_ID" ColumnName="Match ID" />
+          <ScalarProperty Name="Varehouse_ID" ColumnName="Varehouse ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lands">
+      <EntityTypeMapping TypeName="FootballModel.Lands">
+        <MappingFragment StoreEntitySet="Lands">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Land" ColumnName="Land" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matches">
+      <EntityTypeMapping TypeName="FootballModel.Matches">
+        <MappingFragment StoreEntitySet="Matches">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="First_Team" ColumnName="First Team" />
+          <ScalarProperty Name="Second_Team" ColumnName="Second Team" />
+          <ScalarProperty Name="First_Team_Score" ColumnName="First Team Score" />
+          <ScalarProperty Name="Second_Team_Score" ColumnName="Second Team Score" />
+          <ScalarProperty Name="Score_Info" ColumnName="Score Info" />
+          <ScalarProperty Name="Match_Date" ColumnName="Match Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Varehouses">
+      <EntityTypeMapping TypeName="FootballModel.Varehouses">
+        <MappingFragment StoreEntitySet="Varehouses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Land_ID" ColumnName="Land ID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
